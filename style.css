@@ -1,0 +1,97 @@
+/* Container for the photos */
+.photo-container {
+    display: flex; /* Use flexbox to align photos side by side */
+    justify-content: space-between; /* Space between the images */
+    align-items: center; /* Vertically center the images */
+    width: 100%; /* Full width of the screen */
+    margin-top: 7%;
+    padding: 0 20px; /* Optional padding for spacing */
+    position: relative; /* Position relative for absolute elements */
+}
+
+/* Images */
+.responsive-image {
+    width: 30%; /* Each image takes up 30% of the container */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 100%; /* Prevents images from overflowing the container */
+    display: block; /* Removes any extra space */
+    transition: filter 0.3s ease; /* Smooth transition for the blur effect */
+}
+
+/* Blur images on hover */
+.photo-container:hover .responsive-image {
+    filter: blur(5px); /* Blur the images when hovering over the container */
+}
+
+/* Heading Styles */
+h1 {
+    color: #3a67b1;
+    font-family: "Playfair Display", serif;
+    font-size: 120px;
+    font-weight: 400;
+    margin: 0; /* Remove default margins */
+    margin-top: -47%; /* Adjust vertical position */
+    transform: translateX(1%);
+    display: flex; /* Allows h1 to sit next to other inline elements */
+    flex-direction: column; /* Stack each word vertically */
+    text-align: center; /* Center-align the text */
+    line-height: 1; /* Control space between lines */
+    opacity: 0; /* Initially hide the text */
+    transition: opacity 0.3s ease; /* Smooth transition for text appearance */
+}
+
+/* Show the text when hovering over the images */
+.photo-container:hover + h1 {
+    opacity: 1; /* Show the text when hovering over the images */
+}
+
+/* Responsive Heading Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 80px; /* Adjust font size for smaller screens */
+        margin-top: -30%; /* Adjust vertical position for smaller screens */
+    }
+}
+
+/* Paragraph Styles */
+p {
+    color: #3a67b1;
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    width: 80%; /* Set a percentage width for responsiveness */
+    max-width: 500px; /* Optional: Max width for larger screens */
+    margin: 0 auto; /* Center the paragraph */
+    text-align: center; /* Center the text */
+    margin-top: 25px; /* Space above the paragraph */
+    line-height: 1.5; /* Line height for readability */
+    transform: translateX(2%);
+    opacity: 0; /* Initially hide the paragraph */
+    transition: opacity 0.3s ease; /* Smooth transition for paragraph appearance */
+}
+
+/* Show the paragraph when hovering over the images */
+.photo-container:hover + h1 + p {
+    opacity: 1; /* Show the paragraph when hovering over the images */
+}
+
+/* Responsive Paragraph Adjustments */
+@media (max-width: 768px) {
+    p {
+        font-size: 14px; /* Adjust font size for smaller screens */
+        width: 90%; /* Make paragraph width responsive */
+        margin-top: 20px; /* Slightly adjust margin */
+    }
+}
+
+/* Optional Adjustments for Very Small Screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 60px; /* Further adjust for mobile screens */
+    }
+
+    p {
+        font-size: 12px; /* Further adjust for mobile screens */
+        margin-top: 15px; /* Slightly adjust margin */
+        width: 95%; /* Increase width for very small screens */
+    }
+}
